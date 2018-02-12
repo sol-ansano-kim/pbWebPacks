@@ -8,9 +8,11 @@ dist_path = os.path.abspath(ARGUMENTS.get("dist", "release"))
 
 
 try:
-    install_nodz = int(ARGUMENTS.get("install-google-map", "1")) != 0
+    install_google_map = int(ARGUMENTS.get("install-googlemap", "1")) != 0
+    install_slack = int(ARGUMENTS.get("install-slack", "1")) != 0
 except:
-    install_nodz = True
+    install_google_map = True
+    install_slack = True
 
 
 env.Install(os.path.join(dist_path, "pbWebPacks"), Glob("web/*.py"))
